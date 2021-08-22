@@ -1,80 +1,48 @@
+import Story from './Story';
+
+let objetosStorie = [
+  {
+    enredeco: "assets/9gag.svg",
+    pagina: "9gag",
+  },
+  {
+    enredeco: "assets/meowed.svg",
+    pagina: "meowed",
+  },
+  {
+    enredeco: "assets/barked.svg",
+    pagina: "barked"
+  },
+  {
+    enredeco: "assets/nathanwpylestrangeplanet.svg",
+    pagina: "nathanwpylestrangeplanet",
+  },
+  {
+    enredeco: "assets/wawawicomics.svg",
+    pagina: "wawawicomics",
+  },
+  {
+    enredeco: "assets/respondeai.svg",
+    pagina: "respondeai",
+  },
+  {
+    enredeco: "assets/filomoderna.svg",
+    pagina: "filomoderna",
+  },
+  {
+    enredeco: "assets/memeriagourmet.svg",
+    pagina: "memeriagourmet",
+  }
+];
+
 export default function Corpo(){
     return (
         <div class="corpo">
         <div class="esquerda">
           <div class="stories">
-            <div class="story">
-              <div class="imagem">
-                <img src="assets/9gag.svg" />
-              </div>
-              <div class="usuario">
-                9gag
-              </div>
-            </div>
-
-            <div class="story">
-              <div class="imagem">
-                <img src="assets/meowed.svg" />
-              </div>
-              <div class="usuario">
-                meowed
-              </div>
-            </div>
-
-            <div class="story">
-              <div class="imagem">
-                <img src="assets/barked.svg" />
-              </div>
-              <div class="usuario">
-                barked
-              </div>
-            </div>
-
-            <div class="story">
-              <div class="imagem">
-                <img src="assets/nathanwpylestrangeplanet.svg" />
-              </div>
-              <div class="usuario">
-                nathanwpylestrangeplanet
-              </div>
-            </div>
-
-            <div class="story">
-              <div class="imagem">
-                <img src="assets/wawawicomics.svg" />
-              </div>
-              <div class="usuario">
-                wawawicomics
-              </div>
-            </div>
-            
-            <div class="story">
-              <div class="imagem">
-                <img src="assets/respondeai.svg" />
-              </div>
-              <div class="usuario">
-                respondeai
-              </div>
-            </div>
-
-            <div class="story">
-              <div class="imagem">
-                <img src="assets/filomoderna.svg" />
-              </div>
-              <div class="usuario">
-                filomoderna
-              </div>
-            </div>
-
-            <div class="story">
-              <div class="imagem">
-                <img src="assets/memeriagourmet.svg" />
-              </div>
-              <div class="usuario">
-                memeriagourmet
-              </div>
-            </div>
-
+            {
+              objetosStorie.map((objeto) => <Story enredeco = {objeto.enredeco} pagina = {objeto.pagina}/>)
+            }
             <div class="setinha">
               <ion-icon name="chevron-forward-circle"></ion-icon>
             </div>

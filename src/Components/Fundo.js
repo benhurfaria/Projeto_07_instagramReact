@@ -6,6 +6,6 @@ export default function Fundo(){
             <ion-icon name="add-circle-outline"></ion-icon>
             <ion-icon name="heart-outline"></ion-icon>
             <ion-icon name="person-outline"></ion-icon>
-        </div>
+        </div> 
     );
 }
