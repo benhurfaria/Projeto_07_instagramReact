@@ -1,5 +1,9 @@
+import Post from './Post';
 import Story from './Story';
+import Sugestao from './Sugestao';
+import Usuario from './Usuario';
 
+//Criando objetos para componentizar
 let objetosStorie = [
   {
     enredeco: "assets/9gag.svg",
@@ -34,6 +38,48 @@ let objetosStorie = [
     pagina: "memeriagourmet",
   }
 ];
+let objetosPost = [
+  {
+    enderecoPost: "assets/gato-telefone.svg",
+    enderecoPerfil: "assets/meowed.svg",
+    nomePerfil: "meowed"
+  },
+  {
+    enderecoPost: "assets/dog.svg",
+    enderecoPerfil: "assets/barked.svg",
+    nomePerfil: "barked"
+  },
+];
+
+let objetosSugestao = [
+  {
+    imagemPagina: "assets/bad.vibes.memes.svg",
+    nomePagina: "bad.vibes.memes",
+    statusPagina: "Segue você"
+  },
+  {
+    imagemPagina: "assets/chibirdart.svg",
+    nomePagina: "chibirdart",
+    statusPagina: "Segue você"
+  },
+  {
+    imagemPagina: "assets/razoesparaacreditar.svg",
+    nomePagina: "razoesparaacreditar",
+    statusPagina: "Novo no Instagram"
+  },
+  {
+    imagemPagina:"assets/adorable_animals.svg",
+    nomePagina: "adorable_animals",
+    statusPagina: "Segue você"
+  },
+  {
+    imagemPagina: "assets/smallcutecats.svg",
+    nomePagina: "smallcutecats",
+    statusPagina: "Segue você"
+  }
+];
+//Terminando de criar objetos para componentizar
+
 
 export default function Corpo(){
     return (
@@ -49,154 +95,25 @@ export default function Corpo(){
           </div>
 
           <div class="posts">
-            <div class="post">
-              <div class="topo">
-                <div class="usuario">
-                  <img src="assets/meowed.svg" />
-                  meowed
-                </div>
-                <div class="acoes">
-                  <ion-icon name="ellipsis-horizontal"></ion-icon>
-                </div>
-              </div>
-
-              <div class="conteudo">
-                <img src="assets/gato-telefone.svg" />
-              </div>
-
-              <div class="fundo">
-                <div class="acoes">
-                  <div>
-                    <ion-icon name="heart-outline"></ion-icon>
-                    <ion-icon name="chatbubble-outline"></ion-icon>
-                    <ion-icon name="paper-plane-outline"></ion-icon>
-                  </div>
-                  <div>
-                    <ion-icon name="bookmark-outline"></ion-icon>
-                  </div>
-                </div>
-
-                <div class="curtidas">
-                  <img src="assets/respondeai.svg" />
-                  <div class="texto">
-                    Curtido por <strong>respondeai</strong> e <strong>outras 101.523 pessoas</strong>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="post">
-              <div class="topo">
-                <div class="usuario">
-                  <img src="assets/barked.svg" />
-                  barked
-                </div>
-                <div class="acoes">
-                  <ion-icon name="ellipsis-horizontal"></ion-icon>
-                </div>
-              </div>
-
-              <div class="conteudo">
-                <img src="assets/dog.svg" />
-              </div>
-
-              <div class="fundo">
-                <div class="acoes">
-                  <div>
-                    <ion-icon name="heart-outline"></ion-icon>
-                    <ion-icon name="chatbubble-outline"></ion-icon>
-                    <ion-icon name="paper-plane-outline"></ion-icon>
-                  </div>
-                  <div>
-                    <ion-icon name="bookmark-outline"></ion-icon>
-                  </div>
-                </div>
-
-                <div class="curtidas">
-                  <img src="assets/adorable_animals.svg" />
-                  <div class="texto">
-                    Curtido por <strong>adorable_animals</strong> e <strong>outras 99.159 pessoas</strong>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {
+              objetosPost.map((objeto2) => <Post enderecoPost = {objeto2.enderecoPost} enderecoPerfil = {objeto2.enderecoPerfil} nomePerfil = {objeto2.nomePerfil}/>)
+            }
+            
           </div>
         </div>
 
         <div class="sidebar">
-          <div class="usuario">
-            <img src="assets/catanacomics.svg" />
-            <div class="texto">
-              <strong>catanacomics</strong>
-              Catana
-            </div>
-          </div>
-
+          <Usuario nome = "catanacomics" aparente = "Catana"/>
+            
           <div class="sugestoes">
             <div class="titulo">
               Sugestões para você
               <div>Ver tudo</div>
             </div>
 
-            <div class="sugestao">
-              <div class="usuario">
-                <img src="assets/bad.vibes.memes.svg" />
-                <div class="texto">
-                  <div class="nome">bad.vibes.memes</div>
-                  <div class="razao">Segue você</div>
-                </div>
-              </div>
-
-              <div class="seguir">Seguir</div>
-            </div>
-
-            <div class="sugestao">
-              <div class="usuario">
-                <img src="assets/chibirdart.svg" />
-                <div class="texto">
-                  <div class="nome">chibirdart</div>
-                  <div class="razao">Segue você</div>
-                </div>
-              </div>
-
-              <div class="seguir">Seguir</div>
-            </div>
-
-            <div class="sugestao">
-              <div class="usuario">
-                <img src="assets/razoesparaacreditar.svg" />
-                <div class="texto">
-                  <div class="nome">razoesparaacreditar</div>
-                  <div class="razao">Novo no Instagram</div>
-                </div>
-              </div>
-
-              <div class="seguir">Seguir</div>
-            </div>
-
-            <div class="sugestao">
-              <div class="usuario">
-                <img src="assets/adorable_animals.svg" />
-                <div class="texto">
-                  <div class="nome">adorable_animals</div>
-                  <div class="razao">Segue você</div>
-                </div>
-              </div>
-
-              <div class="seguir">Seguir</div>
-            </div>
-
-            <div class="sugestao">
-              <div class="usuario">
-                <img src="assets/smallcutecats.svg" />
-                <div class="texto">
-                  <div class="nome">smallcutecats</div>
-                  <div class="razao">Segue você</div>
-                </div>
-              </div>
-
-              <div class="seguir">Seguir</div>
-            </div>
+            {
+              objetosSugestao.map((objeto3) => <Sugestao imagemPagina = {objeto3.imagemPagina} nomePagina = {objeto3.nomePagina} statusPagina = {objeto3.statusPagina}/>)
+            }
           </div>
 
           <div class="links">
